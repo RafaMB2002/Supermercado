@@ -17,5 +17,14 @@
 
 .listado {
   grid-area: area3;
-  text-align: center;
+}
+
+.listado table {
+  margin: 0 auto;
+}
+
+.listado table,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
