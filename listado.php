@@ -1,11 +1,6 @@
 <?php
-$array[0][0] = 1;
-$array[0][1] = "aceite";
-$array[0][2] = "imagenAceite";
-
-$array[1][0] = 2;
-$array[1][1] = "pan";
-$array[1][2] = "imagenPan";
+include 'libreriaMysql/bd.php';
+$array= getAll();
 
 function pintaListado($array)
 {
@@ -13,7 +8,7 @@ function pintaListado($array)
         echo "<tr>
         <td>" . $array[$i][0] . "</td>
         <td>" . $array[$i][1] . "</td>
-        <td>" . $array[$i][2] . "</td>
+        <td><img src='data:image/png;base64,".$array[$i][2]."' title='var'></td>
         <td><a href='formularios/editaProducto.php?id=".$array[$i][0]."'><img src='imagesListado/editar.png' width='30' height='30'></a></td>
         <td><a href='formularios/borrarProducto.php?id=".$array[$i][0]."'><img src='imagesListado/eliminar.png' width='30' height='30'></a></td>
     </tr>";

@@ -1,7 +1,7 @@
 <?php
 
 function conexion(){
-    $conec=new PDO('mysql:host=localhost;dbname=supermercado','supermercado','4465');
+    $conec=new PDO('mysql:host=192.168.121.83;dbname=supermercado','rafa','1234');
     return $conec;
 }
 function getById($id){
@@ -16,9 +16,7 @@ function getAll(){
     $array=[];
     $registros=$conec->query("SELECT * from productos");
     while($datos=$registros->fetch()){
-        $array[$datos[0]][0]=$datos[0];
-        $array[$datos[0]][1]=$datos[1];
-        $array[$datos[0]][2]=$datos[2];
+        $array[]=array(0 => $datos[0], 1 => $datos[1], 2 => $datos[2]);
     }
     
     return $array;
