@@ -1,11 +1,11 @@
 <?php
-$array[0][0]=1;
-$array[0][1]="aceite";
-$array[0][2]="imagenAceite";
+$array[0][0] = 1;
+$array[0][1] = "aceite";
+$array[0][2] = "imagenAceite";
 
-$array[1][0]=2;
-$array[1][1]="pan";
-$array[1][2]="imagenPan";
+$array[1][0] = 2;
+$array[1][1] = "pan";
+$array[1][2] = "imagenPan";
 
 function pintaListado($array)
 {
@@ -52,7 +52,7 @@ function pintaListado($array)
                     </tr>
                 </thead>
                 <tbody>
-    <?php pintaListado($array);?>
+                    <?php pintaListado($array); ?>
                 </tbody>
             </table>
         </div>
