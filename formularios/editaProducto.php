@@ -1,5 +1,16 @@
 <?php
+include '../libreriaMysql/bd.php';
+$producto=getById($_GET['id']);
+var_dump($producto);
+if(!empty($producto)){
+    $idProducto=$producto[0];
+    $nombrePro=$producto[1];
+    $imgPro=$producto[2];
+    
+}
+
 if(isset($_POST['guardar'])){
+
     $nombre=trim($_POST['nombre']);
     $imagen="";
     //Array con los errores del formulario
@@ -33,19 +44,19 @@ if(isset($_POST['guardar'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta productos</title>
+    <title>Edita producto</title>
 </head>
 <body>
-    <h1>Alta de producto</h1>
-    <form action="nuevoProducto.php" method="post" enctype="multipart/form-data">
+    <h1>Edita producto</h1>
+    <form action="editaProducto.php" method="post" enctype="multipart/form-data">
         <label for="">ID:</label>
-        <input type="text" name="id" value="<?php if(isset($id)) echo $id; ?>" disabled="disabled"/><br>
+        <input type="text" name="id" value="<?php if(isset($idProducto)) echo $idProducto; ?>" disabled="disabled"/><br>
         <label for="">Nombre:</label>
-        <input type="text" name="nombre" value="<?php if(isset($_POST['nombre'])) echo $_POST['nombre']; ?>"/>
+        <input type="text" name="nombre" value="<?php if(isset($nombrePro)) echo $nombrePro; ?>"/>
         <?php
             
-            if(isset($_POST['guardar'])&& !empty($_FILES['imagen'])){
-                echo "<img src='data:image/png;base64,$imagen' title='var'/><br>";
+            if(isset($imgPro)){
+                echo "<img src='data:image/png;base64,".$imgPro."' title='var'/><br>";
             }
         ?>
         <br>
