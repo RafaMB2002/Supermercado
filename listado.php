@@ -14,8 +14,8 @@ function pintaListado($array)
         <td>" . $array[$i][0] . "</td>
         <td>" . $array[$i][1] . "</td>
         <td>" . $array[$i][2] . "</td>
-        <td><a href=''><img src='imagesListado/editar.png' width='30' height='30'></a></td>
-        <td><a href=''><img src='imagesListado/eliminar.png' width='30' height='30'></a></td>
+        <td><a href='formularios/editaProducto.php?id=".$array[$i][0]."'><img src='imagesListado/editar.png' width='30' height='30'></a></td>
+        <td><a href='formularios/borrarProducto.php?id=".$array[$i][0]."'><img src='imagesListado/eliminar.png' width='30' height='30'></a></td>
     </tr>";
     }
 }

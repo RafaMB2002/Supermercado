@@ -1,4 +1,4 @@
 <?php
 include '../libreriaMysql/bd.php';
-deleteById($id);
+deleteById($_GET['id']);
 ?>
