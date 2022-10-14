@@ -1,0 +1,30 @@
+.contenedor {
+  display: grid;
+  grid-template-areas:
+    "area1 area2"
+    "area3 area3";
+}
+
+.titulo {
+  grid-area: area1;
+  text-align: left;
+}
+
+.btnNuevo {
+  grid-area: area2;
+  text-align: right;
+}
+
+.listado {
+  grid-area: area3;
+}
+
+.listado table {
+  margin: 0 auto;
+}
+
+.listado table,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
