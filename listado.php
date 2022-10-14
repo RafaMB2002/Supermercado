@@ -38,7 +38,7 @@ function pintaListado($array)
             <h1>LISTADO</h1>
         </div>
         <div class="btnNuevo">
-            <a href="">NUEVO</a>
+            <a href="formularios/nuevoProducto.php">NUEVO</a>
         </div>
         <div class="listado">
             <table>
