@@ -1,7 +1,9 @@
 <?php
 include '../libreriaMysql/bd.php';
-$producto=getById($_GET['id']);
-var_dump($producto);
+//$producto=getById($_GET['id']);
+//var_dump($_GET['id']);
+//var_dump ($producto);
+
 if(!empty($producto)){
     $idProducto=$producto[0];
     $nombrePro=$producto[1];
@@ -21,7 +23,7 @@ if(isset($_POST['guardar'])){
     if(!empty($nombre)){
         $producto['nombre']=$nombre;
     }else{
-        '<span style="color:red;">Introduzca el nombre del producto</span>';
+        '<span>Introduzca el nombre del producto</span>';
     }
 
     if(isset($_FILES['imagen'])){
@@ -30,7 +32,7 @@ if(isset($_POST['guardar'])){
         $imagen=base64_decode($imagen);
         //$producto['foto']=$imagen;
     }else{
-        '<span style="color:red;">Introduzca el nombre del producto</span>';
+        '<span>Introduzca el nombre del producto</span>';
     }
 }
    
@@ -45,6 +47,7 @@ if(isset($_POST['guardar'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edita producto</title>
+    <link rel="stylesheet" type="text/css" href="../estilosListado/formulario.css" media="screen" />
 </head>
 <body>
     <h1>Edita producto</h1>
@@ -62,9 +65,8 @@ if(isset($_POST['guardar'])){
         <br>
         <label for="">Imagen:</label>
         <input type="file" name="imagen"/><br>
-        <input type="submit" name="guardar" value="Guardar">
-        
-        
+        <input type="submit" class="boton" name="guardar" value="Guardar">
     </form>
+
 </body>
 </html>

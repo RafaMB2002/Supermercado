@@ -13,7 +13,7 @@ if(isset($_POST['guardar'])){
             //$producto['nombre']=$nombre;
             $nombre=trim($_POST['nombre']);
         }else{
-            '<span style="color:red;">Introduzca el nombre del producto</span>';
+            '<span>Introduzca el nombre del producto</span>';
         }
     
 
@@ -27,7 +27,7 @@ if(isset($_POST['guardar'])){
            // $producto['foto']=$imagen;
            //echo $imagen;
         }else{
-            echo '<span style="color:red;">Introduzca el nombre del producto</span>';
+            echo '<span>Introduzca el nombre del producto</span>';
         }
     }
     if(!empty($nombre)&& !empty($imagen)){
@@ -36,7 +36,7 @@ if(isset($_POST['guardar'])){
         }
        
     }else{
-        echo '<span style="color:red;">Error</span>';
+        echo '<span>Error</span>';
     }
 
 }
@@ -52,10 +52,13 @@ if(isset($_POST['guardar'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alta productos</title>
+    <link rel="stylesheet" type="text/css" href="../estilosListado/formulario.css" media="screen" />
 </head>
 <body>
     <h1>Alta de producto</h1>
+    
     <form action="nuevoProducto.php" method="post" enctype="multipart/form-data">
+        
         <label for="">Nombre:</label>
         <input type="text" name="nombre" value="<?php if(isset($_POST['nombre'])) echo $_POST['nombre']; ?>"/>
         <?php
@@ -67,9 +70,9 @@ if(isset($_POST['guardar'])){
         <br>
         <label for="">Imagen:</label>
         <input type="file" name="imagen"/><br>
-        <input type="submit" name="guardar" value="Guardar">
-        
-        
+        <input type="submit" class="boton" name="guardar" value="Guardar">
+    
     </form>
+    
 </body>
 </html>
